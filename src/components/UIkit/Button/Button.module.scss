@@ -1,0 +1,56 @@
+.button {
+	@apply flex items-center rounded-md font-normal gap-1 w-fit box-border transition-all ease-in-out;
+	font-family: "Roboto", sans-serif;
+	svg {
+		height: 18px;
+	}
+}
+
+.primary {
+	@apply bg-primary border-2 border-primary text-white;
+	&:hover {
+		@apply bg-secondary border-secondary;
+	}
+	&:disabled {
+		@apply bg-extra-light text-light border-extra-light;
+	}
+	&:focus {
+		@apply bg-secondary;
+	}
+}
+
+.outline {
+	@apply outline-1 outline-primary text-primary;
+}
+
+.text {
+	@apply bg-red-400;
+}
+
+.xs {
+	@apply h-5 px-2;
+	font-size: smaller;
+	svg {
+		height: 12px;
+	}
+}
+
+.sm {
+	@apply h-6 px-3;
+	font-size: small;
+	svg {
+		height: 14px;
+	}
+}
+
+.base {
+	@apply h-8 px-4;
+}
+
+.lg {
+	@apply h-10 px-5;
+}
+
+.xl {
+	@apply h-12 px-6;
+}
