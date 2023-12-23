@@ -1,3 +1,4 @@
+import { Badge } from './components/UIkit/Badge';
 import { Button } from './components/UIkit/Button';
 import { Input } from './components/UIkit/Input';
 
@@ -124,8 +125,6 @@ function App() {
       <Input
         helperText="helperText"
         label="label"
-        required="optional"
-		  error
         icon={
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -137,6 +136,9 @@ function App() {
           </svg>
         }
       />
+      <Badge isDeletable>Blue</Badge>
+      <Badge>Yellow</Badge>
+      <Badge>Red</Badge>
     </div>
   );
 }

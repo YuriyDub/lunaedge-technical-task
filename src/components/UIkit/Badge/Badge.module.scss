@@ -1,0 +1,15 @@
+.badge {
+	@apply flex w-min text-nowrap items-center h-min bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 gap-1 lowercase;
+
+	svg {
+		@apply h-3.5 text-gray-500;
+	}
+}
+
+.rounded {
+	@apply rounded-full;
+}
+
+.squared {
+	@apply rounded-md;
+}

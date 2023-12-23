@@ -34,6 +34,7 @@
 
 		input {
 			all: unset;
+			width: 100%;
 		}
 	}
 
@@ -46,6 +47,7 @@
 .disabled {
 	.inputBody {
 		@apply bg-extra-light border-none text-light;
+		cursor: no-drop;
 	}
 }
 

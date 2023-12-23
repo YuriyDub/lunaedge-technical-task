@@ -2,13 +2,13 @@ import { ChangeEventHandler, useState } from 'react';
 import styles from './Input.module.scss';
 
 type inputPropsType = {
-  icon?: React.ReactElement;
+  icon?: React.ReactNode;
   placeholder?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   value?: string;
   label?: string;
-  required?: string;
   helperText?: string;
+  required?: boolean;
   error?: boolean;
   disabled?: boolean;
 };
@@ -32,11 +32,12 @@ export const Input = ({
       } ${styles[error ? 'error' : '']}`}>
       <div className={styles.inputHead}>
         <span className={styles.label}>{label}</span>
-        <span className={styles.required}>{required}</span>
+        <span className={styles.required}>{required ? 'required' : 'optional'}</span>
       </div>
       <div className={styles.inputBody}>
         {icon}
         <input
+          readOnly={disabled}
           onChange={onChange}
           value={value}
           onFocus={() => setActive(true)}
