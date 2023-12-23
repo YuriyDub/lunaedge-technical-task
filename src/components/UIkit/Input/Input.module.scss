@@ -1,0 +1,74 @@
+.input {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 400px;
+	gap: 8px;
+
+	.inputHead {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		user-select: none;
+
+		.label {
+			@apply capitalize font-medium;
+		}
+
+		.required {
+			@apply capitalize text-gray-500 text-sm;
+		}
+	}
+
+	.inputBody {
+		@apply flex box-border items-center gap-2 border flex-grow rounded-md px-4 py-2 h-10 transition-all ease-in-out;
+		max-width: 400px;
+
+		&:hover {
+			@apply border-2 border-primary;
+		}
+
+		svg {
+			height: 16px;
+		}
+
+		input {
+			all: unset;
+		}
+	}
+
+	.helperText {
+		user-select: none;
+		@apply capitalize text-gray-500;
+	}
+}
+
+.disabled {
+	.inputBody {
+		@apply bg-extra-light border-none text-light;
+	}
+}
+
+.active {
+	.inputBody {
+		@apply border-2 border-primary;
+	}
+}
+
+.error {
+	.inputBody {
+		@apply border-2 border-red-500;
+
+		&:hover {
+			@apply border-2 border-red-500;
+		}
+
+		svg {
+			@apply text-red-500;
+		}
+	}
+
+	.helperText {
+		@apply text-red-500;
+	}
+}

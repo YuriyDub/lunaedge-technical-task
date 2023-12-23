@@ -1,8 +1,9 @@
 import { Button } from './components/UIkit/Button';
+import { Input } from './components/UIkit/Input';
 
 function App() {
   return (
-    <div>
+    <div style={{ display: 'flex' }}>
       <Button size="xs">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +75,7 @@ function App() {
           />
         </svg>
       </Button>
-      <Button size="lg">
+      <Button size="lg" variant="outline">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -97,7 +98,7 @@ function App() {
           <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
         </svg>
       </Button>
-      <Button size="xl" disabled>
+      <Button size="xl" disabled variant="outline">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -120,6 +121,22 @@ function App() {
           <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
         </svg>
       </Button>
+      <Input
+        helperText="helperText"
+        label="label"
+        required="optional"
+		  error
+        icon={
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="w-6 h-6">
+            <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+            <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+          </svg>
+        }
+      />
     </div>
   );
 }
