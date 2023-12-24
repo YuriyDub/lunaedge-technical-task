@@ -72,6 +72,7 @@ export const HomePage = () => {
               control={control}
               rules={{
                 required: 'name is required',
+                pattern: { value: /^[A-Z]+$/, message: 'name must contain letters A-Z' },
                 minLength: { value: 2, message: 'Min length is 2 symbols' },
                 maxLength: { value: 12, message: 'Max length is 12 symbols' },
               }}
@@ -94,6 +95,7 @@ export const HomePage = () => {
               control={control}
               rules={{
                 required: 'surname is required',
+                pattern: { value: /^[A-Z]+$/, message: 'surname must contain letters A-Z' },
                 minLength: { value: 2, message: 'Min length is 2 symbols' },
                 maxLength: { value: 12, message: 'Max length is 12 symbols' },
               }}
