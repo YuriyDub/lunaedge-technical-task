@@ -1,0 +1,27 @@
+.modal {
+	@apply flex bg-white flex-col shadow-md rounded-md h-min z-10;
+	width: 100%;
+	max-width: 600px;
+	.modalHead {
+		@apply flex px-8 py-5;
+		.title {
+			@apply capitalize font-medium text-2xl;
+		}
+
+		button {
+			@apply ml-auto;
+
+			svg {
+				@apply h-5 hover:text-gray-400;
+			}
+		}
+	}
+
+	.modalBody {
+		@apply flex px-8 py-5 gap-2;
+	}
+
+	.modalFooter {
+		@apply flex items-center justify-end px-8 py-5 border-t mt-auto gap-1;
+	}
+}

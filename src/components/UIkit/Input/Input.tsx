@@ -11,6 +11,7 @@ type inputPropsType = {
   required?: boolean;
   error?: boolean;
   disabled?: boolean;
+  name?: string;
 };
 
 export const Input = ({
@@ -23,6 +24,7 @@ export const Input = ({
   helperText,
   error,
   disabled,
+  name,
 }: inputPropsType) => {
   const [active, setActive] = useState<boolean>(false);
   return (
@@ -30,10 +32,12 @@ export const Input = ({
       className={`${styles.input} ${styles[disabled ? 'disabled' : '']} ${
         styles[active ? 'active' : '']
       } ${styles[error ? 'error' : '']}`}>
-      <div className={styles.inputHead}>
-        <span className={styles.label}>{label}</span>
-        <span className={styles.required}>{required ? 'required' : 'optional'}</span>
-      </div>
+      {required !== undefined && (
+        <div className={styles.inputHead}>
+          <label className={styles.label}>{label}</label>
+          <span className={styles.required}>{required ? 'required' : 'optional'}</span>
+        </div>
+      )}
       <div className={styles.inputBody}>
         {icon}
         <input
@@ -42,7 +46,9 @@ export const Input = ({
           value={value}
           onFocus={() => setActive(true)}
           onBlur={() => setActive(false)}
-          placeholder={placeholder}></input>
+          placeholder={placeholder}
+          name={name}
+          disabled={disabled}></input>
       </div>
       <span className={styles.helperText}>{helperText}</span>
     </div>

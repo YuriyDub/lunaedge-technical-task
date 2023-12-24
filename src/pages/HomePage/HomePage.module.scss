@@ -1,0 +1,27 @@
+.page {
+	@apply flex flex-col h-screen relative p-10 bg-extra-light;
+
+	.team {
+		@apply bg-light gap-2 rounded-md px-12 py-20 mt-10;
+		max-width: 600px;
+
+		h1 {
+			@apply text-xl font-medium;
+		}
+
+		ul{
+			@apply gap-2;
+			li{
+				@apply italic;
+			}
+		}
+	}
+
+	.modal {
+		@apply absolute;
+		right: 50%;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+}

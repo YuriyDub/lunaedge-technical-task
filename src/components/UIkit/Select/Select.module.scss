@@ -1,11 +1,11 @@
-.input {
+.select {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	max-width: 400px;
 	gap: 8px;
 
-	.inputHead {
+	.selectHead {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -20,22 +20,52 @@
 		}
 	}
 
-	.inputBody {
-		@apply flex box-border items-center gap-2 border  rounded-md px-4 py-2 h-10 transition-all ease-in-out;
+	.selectBody {
+		@apply flex box-border items-center gap-2 border rounded-md px-4 py-2 min-h-10 transition-all ease-in-out;
 		max-width: 400px;
+		overflow-y: hidden;
+		scrollbar-width: thin;
 
 		&:hover {
 			@apply border-primary;
 			box-shadow: 0 0 0 1px theme("colors.primary");
 		}
 
+		.selectedOptions {
+			@apply flex gap-1;
+			flex: 1;
+			width: auto;
+			flex-wrap: wrap;
+			text-align: left;
+
+			.placeholder {
+				@apply text-gray-400;
+			}
+		}
+
 		svg {
 			height: 16px;
 		}
+	}
 
-		input {
-			all: unset;
+	.pivot {
+		position: relative;
+
+		.options {
+			@apply flex-col bg-white border py-3 px-2 gap-2 rounded-md z-10;
+			display: none;
 			width: 100%;
+			position: absolute;
+			max-height: 200px;
+			overflow-y: auto;
+
+			.option {
+				@apply border-b p-2 cursor-pointer rounded-t-md text-left;
+
+				&:hover {
+					@apply bg-extra-light;
+				}
+			}
 		}
 	}
 
@@ -46,7 +76,7 @@
 }
 
 .disabled {
-	.inputBody {
+	.selectBody {
 		@apply bg-extra-light border-none text-light;
 		cursor: no-drop;
 
@@ -57,24 +87,25 @@
 }
 
 .active {
-	.inputBody {
+	.selectBody {
 		@apply border-primary;
 		box-shadow: 0 0 0 1px theme("colors.primary");
+	}
+	.pivot {
+		.options {
+			display: flex;
+		}
 	}
 }
 
 .error {
-	.inputBody {
+	.selectBody {
 		@apply border-red-500;
 		box-shadow: 0 0 0 1px theme("colors.red.500");
 
 		&:hover {
 			@apply border-red-500;
 			box-shadow: 0 0 0 1px theme("colors.red.500");
-		}
-
-		svg {
-			@apply text-red-500;
 		}
 	}
 

@@ -9,10 +9,10 @@ type BadgePropsType = {
 
 export const Badge = ({ variant = 'rounded', children, isDeletable, onDelete }: BadgePropsType) => {
   return (
-    <span className={`${styles.badge} ${styles[variant]}`}>
+    <li className={`${styles.badge} ${styles[variant]}`}>
       {children}
       {isDeletable ? (
-        <button onClick={onDelete}>
+        <span onClick={onDelete}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -24,8 +24,8 @@ export const Badge = ({ variant = 'rounded', children, isDeletable, onDelete }: 
               clipRule="evenodd"
             />
           </svg>
-        </button>
+        </span>
       ) : null}
-    </span>
+    </li>
   );
 };
