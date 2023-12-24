@@ -20,7 +20,6 @@ export const Default: Story = {
         <Select
           label="select"
           options={['option-1', 'option-2', 'option-3', 'option-4', 'option-5', 'option-6']}
-          option={'option-1'}
           helperText="choose your option"
         />
       </div>
